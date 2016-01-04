@@ -11,7 +11,7 @@ $path_to_avatars         = './Avatars/Zdzislaw_Beksinski/';
 /* Your Steam ID: */
 $sid                     = "";
 /* Login to Steam in a browser like Firefox. View the cookies set for Steamcommunity.com.
-   Put the values of the cookies here. */
+   Put the values of the cookies here: */
 $cookie_sessionid        = "";
 $cookie_steamLoginSecure = "";
 

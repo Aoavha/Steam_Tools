@@ -7,6 +7,8 @@
 // CONFIG:
 // 
 
+$path_to_avatars               = './Avatars/Zdzislaw_Beksinski/';
+
 /* Your Steam ID: */
 $sid                           = "";
 /* Login to Steam in a browser like Firefox. View the cookies set for Steamcommunity.com.
@@ -24,10 +26,10 @@ $cookie_steamMachineAuth_value = "";
 // CODE:
 //
 
-$picture_files = array_diff(scandir('./Avatars/Zdzislaw_Beksinski/'), array('.', '..'));
+$picture_files = array_diff(scandir($path_to_avatars), array('.', '..'));
 foreach($picture_files as $picture_file) {	
 	echo "Loaded $picture_file\r\n";
-	$picture_filepath = './Avatars/Zdzislaw_Beksinski/' . $picture_file;
+	$picture_filepath = $path_to_avatars . $picture_file;
  
  	$POST_data = array(); 
 	$POST_data['MAX_FILE_SIZE'] = "1048576";

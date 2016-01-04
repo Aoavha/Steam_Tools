@@ -30,13 +30,13 @@ foreach($picture_files as $picture_file) {
 	$POST_data['MAX_FILE_SIZE'] = "1048576";
 	$POST_data['type']          = "player_avatar_image";
 	$POST_data['sId']           = $sid;
-	$POST_data['sessionid']     = $cookie_sessionid_value;
+	$POST_data['sessionid']     = $cookie_sessionid;
 	$POST_data['doSub']         = "1"; 
 	$POST_data['json']          = "1"; 
 	$POST_data['avatar']        = "@$picture_filepath";
 	
-	$cookie_header = "sessionid=$cookie_sessionid_value; " . 
-			 "steamLoginSecure=$cookie_steamLoginSecure_value";
+	$cookie_header = "sessionid=$cookie_sessionid; " . 
+			 "steamLoginSecure=$cookie_steamLoginSecure";
  
 	$curl_handle = curl_init();
 	curl_setopt($curl_handle, CURLOPT_URL, 'https://steamcommunity.com/actions/FileUploader');

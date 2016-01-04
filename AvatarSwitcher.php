@@ -7,20 +7,13 @@
 // CONFIG:
 // 
 
-$path_to_avatars               = './Avatars/Zdzislaw_Beksinski/';
-
+$path_to_avatars         = './Avatars/Zdzislaw_Beksinski/';
 /* Your Steam ID: */
-$sid                           = "";
+$sid                     = "";
 /* Login to Steam in a browser like Firefox. View the cookies set for Steamcommunity.com.
    Put the values of the cookies here. */
-$cookie_sessionid_value        = "";
-$cookie_steamCountry_value     = "";
-$cookie_steamLogin_value       = "";
-$cookie_steamLoginSecure_value = "";
-/* There is a cookie that has a name that has a suffix of 'steamMachineAuth', with a prefix that may be user-dependent.
-   Put that name here. */
-$cookie_steamMachineAuth_name  = "";
-$cookie_steamMachineAuth_value = "";
+$cookie_sessionid        = "";
+$cookie_steamLoginSecure = "";
 
 //
 // CODE:
@@ -41,10 +34,7 @@ foreach($picture_files as $picture_file) {
 	$POST_data['avatar']        = "@$picture_filepath";
 	
 	$cookie_header = "sessionid=$cookie_sessionid_value; " . 
-					 "steamCountry=$cookie_steamCountry_value; " .
-					 "steamLogin=$cookie_steamLogin_value; " .
-					 "$cookie_steamMachineAuth_name=$cookie_steamMachineAuth_value; " .
-					 "steamLoginSecure=$cookie_steamLoginSecure_value";
+			 "steamLoginSecure=$cookie_steamLoginSecure_value";
  
 	$curl_handle = curl_init();
 	curl_setopt($curl_handle, CURLOPT_URL, 'https://steamcommunity.com/actions/FileUploader');
@@ -58,4 +48,3 @@ foreach($picture_files as $picture_file) {
 	echo $curl_return . "\r\n";
 	sleep(1);
 }
-?>

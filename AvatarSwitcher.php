@@ -19,6 +19,8 @@ $cookie_steamLoginSecure = "";
 // CODE:
 //
 
+otog:
+
 $picture_files = array_diff(scandir($path_to_avatars), array('.', '..'));
 foreach($picture_files as $picture_file) {	
 	echo "Loaded $picture_file\r\n";
@@ -48,3 +50,5 @@ foreach($picture_files as $picture_file) {
 	echo $curl_return . "\r\n";
 	sleep(1);
 }
+
+goto otog;
